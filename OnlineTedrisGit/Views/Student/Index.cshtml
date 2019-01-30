@@ -1,0 +1,142 @@
+﻿@model OnlineTedris.Models.DbModels.Telebe
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .field-validation-error
+    {
+        color: red;
+    }
+</style>
+
+<section class="tz-wrapper-default">
+    <div class="tz-joom-title">
+        <img src="~/demos/check.png" alt="Image">
+        <h1><a href="#">Tələbələrin Qeydiyyatı</a></h1>
+        <span>Check more about our activities</span>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div class="tz-link-widget">
+                    <aside class="widget">
+                        <form method="get" id="searchform" class="tz-bog-search" action="#">
+                            <input type="text" name="s" id="s" placeholder="Search by word">
+                            <label class="fa fa-search">&nbsp;</label>
+                        </form>
+                    </aside>
+                    <aside class="widget widget-link">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <img alt="Images" src="~/demos/check.png">
+                                    <i class="fa fa-arrows-alt"></i>
+                                    <strong>Log In Form</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img alt="Images" src="~/demos/check.png">
+                                    <i class="fa fa-arrows-alt"></i>
+                                    <strong>Register Form</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img alt="Images" src="~/demos/check.png">
+                                    <i class="fa fa-arrows-alt"></i>
+                                    <strong>Remind User</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img alt="Images" src="~/demos/check.png">
+                                    <i class="fa fa-arrows-alt"></i>
+                                    <strong>Reset Pass</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img alt="Images" src="~/demos/check.png">
+                                    <i class="fa fa-arrows-alt"></i>
+                                    <strong>Edit User Profile</strong>
+                                </a>
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                <div class="joom-register">
+                    <h4 class="joom-title"><img src="~/demos/check.png" alt="Images">Qeydİyyat</h4>
+                    <p>I am a returning customer</p>
+
+                    @using (Html.BeginForm("RegisterStudent", "Student", FormMethod.Post, new { @class = "form-register tz-joomla-register" }))
+                    {
+                        @Html.AntiForgeryToken() //Link ile gelende emeliyyet yerine yetirmir
+                        //@Html.ValidationSummary() <!-- Validation ucun nezerde tutulub hamisini bir mesaj kimi verir -->
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <h4 class="details-title">SİZİN ŞƏXSİ MƏLUMATLARINIZ</h4>
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                        @Html.LabelFor(m => m.Adi)
+                                    </div>
+                                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                                        @Html.TextBoxFor(m => m.Adi)
+                                        @Html.ValidationMessageFor(m => m.Adi)
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                        @Html.LabelFor(m => m.Soyadi)
+                                    </div>
+                                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                                        @Html.TextBoxFor(m => m.Soyadi)
+                                        @Html.ValidationMessageFor(m => m.Soyadi)
+                                    </div>
+                                </div>
+
+
+                                <div class="form-ds"><input type="checkbox" class="chk_register"> I have read and agree to the Privacy Policy </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <h4 class="details-title">ƏLAQƏ</h4>
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                        @Html.LabelFor(m => m.Email)
+                                    </div>
+                                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                                        @Html.TextBoxFor(m => m.Email)
+                                        @Html.ValidationMessageFor(m=>m.Email)
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                        @Html.LabelFor(m => m.Shifre)
+                                    </div>
+                                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                                        @Html.PasswordFor(m => m.Shifre)
+                                        @Html.ValidationMessageFor(m => m.Shifre)
+                                    </div>
+                                </div>
+                                <div class="controls">
+
+                                    <button type="submit"><i class="fa fa-arrows-alt"></i>TƏSDİQ</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end class row-->
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
