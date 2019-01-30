@@ -58,11 +58,11 @@ namespace OnlineTedrisGit
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "351924244897-gf64mlqissui2fu8vhcubt82i728p1gv.apps.googleusercontent.com",
+                ClientSecret = "Hw1SO9CC_65_AxqB_QegfDsT"
+            });
         }
     }
 }
