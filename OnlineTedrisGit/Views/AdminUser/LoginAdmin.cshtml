@@ -1,0 +1,66 @@
+﻿@model OnlineTedris.Models.DbModels.AdminUser
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Login</title>
+    <!-- Custom fonts for this template-->
+    <link href="~/Content/AdminStyle/Adminn/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Custom styles for this template-->
+    <link href="~/Content/AdminStyle/Adminn/css/sb-admin.css" rel="stylesheet">
+</head>
+<body class="bg-dark">
+    <div class="container">
+        <div class="card card-login mx-auto mt-5">
+            <div class="card-header">Giriş səhifəsi</div>
+            <div class="card-body">
+                @using (Html.BeginForm("LoginAdmin", "AdminUser", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken() //Link ile gelende emeliyyet yerine yetirmir
+                    <div class="form-group">
+                        <div class="form-label-group">
+                            @Html.LabelFor(m => m.Username)
+                            @Html.TextBoxFor(m => m.Username, new { @class = "form-control", placeholder = "İstifadəçi adı", required = "required", autofocus = "autofocus" })
+                            @Html.ValidationMessageFor(m => m.Username)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label-group">
+                            @Html.LabelFor(m => m.Passvords)
+                            @Html.PasswordFor(m => m.Passvords, new { @class = "form-control", placeholder = "Şifrə", required = "required" })
+                            @Html.ValidationMessageFor(m => m.Passvords)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="remember-me">
+                                Şifrəni xatırlat
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary btn-block">Daxil ol</button>
+                    @*<div class="text-center">
+                            <a class="d-block small mt-3" href="register.html">Register an Account</a>
+                            <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
+                        </div>*@
+                }
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/Content/AdminStyle/Adminn/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Content/AdminStyle/Adminn/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="~/Content/AdminStyle/Adminn/vendor/jquery-easing/jquery.easing.min.js"></script>
+</body>
+</html>

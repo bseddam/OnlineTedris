@@ -22,6 +22,7 @@ namespace OnlineTedris.Context
         public DbSet<TelebeninKursu> TelebeninKursus { get; set; }
         public DbSet<TelebeSebet> TelebeSebets { get; set; }
         public DbSet<Teyinati> Teyinatis { get; set; }
+        public DbSet<AdminUser> AdminUsers { get; set; }
                 
     }
 }
