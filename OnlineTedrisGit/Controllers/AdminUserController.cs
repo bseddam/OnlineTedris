@@ -31,8 +31,12 @@ namespace OnlineTedris.Controllers
             {
                 ViewBag.message = "Istifadəçi adı və ya şifrə yalnışdır!";
                 return View();
-            }
-            
+            }            
+        }
+        public ActionResult TehsilKateqoriya()
+        {
+            var TBKateqoriya = db.TehsilKateqoriyas.ToList();
+            return View(TBKateqoriya);
         }
     }
 }

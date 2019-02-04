@@ -3654,6 +3654,7 @@
     <Content Include="Views\AdminUser\Shared\_Layout.cshtml" />
     <Content Include="Views\AdminUser\LoginAdmin.cshtml" />
     <Content Include="Views\AdminUser\Index.cshtml" />
+    <Content Include="Views\AdminUser\TehsilKateqoriya.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
